@@ -1,1 +1,9 @@
-h1 Hi
+a.previous-posts href='#previous-posts' #previous-posts
+- articles.first.tap do |article|
+  == article.compiled_content(snapsot: :body)
+.previous-posts#previous-posts
+  h2 Previous Posts
+  - articles.each do |article|
+    a.previous-post href=article.path
+      =article[:title]
+      span.posted= article[:posted]

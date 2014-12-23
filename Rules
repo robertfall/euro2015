@@ -18,6 +18,13 @@ compile '/stylesheet/' do
   filter :sass, syntax: :scss
 end
 
+compile '/posts/*/' do
+  filter :haml
+  layout 'post'
+  snapshot :body
+  layout 'default'
+end
+
 compile '*' do
   if item.binary?
     # don’t filter binary items

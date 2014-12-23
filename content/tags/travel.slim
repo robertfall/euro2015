@@ -1,0 +1,6 @@
+.previous-posts
+  h2.travel Travel Posts
+  - items_with_tag('travel').each do |article|
+    a.previous-post href=article.path
+      =article[:title]
+      span.posted= article[:posted]
