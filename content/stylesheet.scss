@@ -51,9 +51,11 @@ a.previous-posts {
   left: 0;
   width: 100%;
   text-align: center;
-  color: white;
   text-shadow: 2px 2px #aaa;
 
+  a, a:visited {
+    color: white;
+  }
   h1 {
     font-size: 84px;
 
@@ -70,6 +72,10 @@ a.previous-posts {
   h2 {
     border-bottom: 1px solid rgb(51, 51, 51);
   }
+
+  @media (max-width: $breakpoint) {
+    padding: 0 20px;
+  }
 }
 
 .previous-post {
@@ -77,6 +83,10 @@ a.previous-posts {
   position: relative;
   font-size: 2em;
   font-weight: 200;
+
+  @media (max-width: $breakpoint) {
+    font-size: 1em;
+  }
 
   &:hover {
     text-decoration: underline;
@@ -101,9 +111,10 @@ a.previous-posts {
   p {
     font-size: 1.4em;
     line-height: 1.5em;
+    margin: 10px 0;
 
     @media (max-width: $breakpoint) {
-      padding: 0 10px;
+      padding: 0 20px;
     }
   }
 }
@@ -124,7 +135,10 @@ a.previous-posts {
 .tags {
   @include outer-container;
   text-align: left;
-  margin-bottom: 30px;
+
+  @media (max-width: $breakpoint) {
+    padding: 0 20px;
+  }
 
   span, a {
     font-size: 1.4em;
@@ -140,3 +154,7 @@ a.previous-posts {
 .geek { color: $geek; }
 .travel { color: $travel; }
 .beer { color: $beer; }
+
+footer {
+  margin-bottom: 30px;
+}

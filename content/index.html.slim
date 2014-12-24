@@ -1,6 +1,6 @@
 a.previous-posts href='#previous-posts' #previous-posts
 - articles.first.tap do |article|
-  == article.compiled_content(snapsot: :body)
+  == article.compiled_content(snapshot: :body)
 .previous-posts#previous-posts
   h2 Previous Posts
   - articles.each do |article|
