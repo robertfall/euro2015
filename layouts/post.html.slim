@@ -1,4 +1,8 @@
 .post
+  img src="/images/#{item[:header_image]}"
+  .post-title
+    a href=item.path
+      h1=item[:title]
   == yield
   .tags
     span.tag-title tags
