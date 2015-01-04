@@ -18,6 +18,9 @@ compile '/stylesheet/' do
   filter :sass, syntax: :scss
 end
 
+compile '/assets/*' do
+end
+
 compile '/posts/*/' do
   filter :haml
   layout 'post'
@@ -36,6 +39,11 @@ end
 
 route '/stylesheet/' do
   '/style.css'
+end
+
+route '/assets/*' do
+  # /assets/foo.html/ → /foo.html
+  item.identifier[7..-2]
 end
 
 route '*' do

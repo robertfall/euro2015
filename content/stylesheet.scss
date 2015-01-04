@@ -3,6 +3,7 @@ $max-width: em(700);
 @import '../base/base';
 @import '../neat/neat';
 
+@include font-face("Fanwood Text", "/fonts/fanwood_text");
 
 $gray: #bebebe;
 $geek: #7070BB;
@@ -32,7 +33,8 @@ a.previous-posts {
 }
 
 .post {
-  font-family: Georgia,Cambria,"Times New Roman",Times,serif;
+  font-family: "Fanwood Text", Cambria,"Times New Roman",Times,serif;
+  font-weight: 300;
   text-align: center;
   position: relative;
 
@@ -109,7 +111,7 @@ a.previous-posts {
   text-align: left;
 
   p {
-    font-size: 1.4em;
+    font-size: 1.5em;
     line-height: 1.5em;
     margin: 10px 0;
 
