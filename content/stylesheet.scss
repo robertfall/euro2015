@@ -111,6 +111,10 @@ a.previous-posts {
   @include outer-container;
   text-align: left;
 
+  @media (max-width: $breakpoint) {
+    text-align: justify;
+  }
+
   p {
     font-size: 1.5em;
     line-height: 1.5em;
@@ -192,4 +196,11 @@ blockquote {
 hr {
   width: 80px;
   margin: 40px auto;
+}
+
+.caption {
+  text-align: center;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 19px;
+  color: $gray;
 }
