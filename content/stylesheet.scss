@@ -10,6 +10,9 @@ $dark-gray: #767676;
 $geek: #7070BB;
 $travel: #A3AE8B;
 $beer: #9E775A;
+
+$south-africa: #83B270;
+
 $breakpoint: 600px;
 
 body {
@@ -54,7 +57,7 @@ a.previous-posts {
   left: 0;
   width: 100%;
   text-align: center;
-  text-shadow: 2px 2px #aaa;
+  text-shadow: 2px 2px #404040;
 
   a, a:visited {
     color: white;
@@ -104,6 +107,7 @@ a.previous-posts {
     font-size: 0.5em;
     color: gray;
     margin-left: 15px;
+    line-height: 10px;
   }
 }
 
@@ -203,4 +207,61 @@ hr {
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 19px;
   color: $gray;
+}
+
+.comment-header {
+  text-align: center;
+  font-weight: 200;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+.country {
+  display: flex;
+  margin: 10px 0;
+
+  .left-column {
+    width: 29px;
+    align-self: center;
+  }
+
+  .right-column {
+    border-left: 4px solid;
+    padding: 0 10px;
+  }
+
+  .country-name {
+    font-size: 1.5em;
+    font-weight: 800;
+    line-height: 25px;
+    transform-origin: 50% 50%;
+    transition: all 1s;
+    width: 200px;
+    align-self: center;
+    transform: translateX(-85px) rotate(-90deg);
+    text-align: center;
+  }
+
+  &.south-africa {
+    border-color: $south-africa;
+    color: $south-africa;
+
+    a {
+      color: $south-africa;
+    }
+  }
+}
+
+.rotated-country-name {
+
+    position: absolute;
+    top: 0;
+    left: -230px;
+    transform: rotate(-90deg);
+    width: 200px;
+    transform-origin: 100% 0;
+    transition: all 1s;
+    text-align: right;
+    /* padding-right: 10px; */
+
 }
