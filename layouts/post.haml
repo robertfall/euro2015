@@ -1,0 +1,32 @@
+#fb-root
+
+:javascript
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=272346129613124&version=v2.0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+.post
+  %img{src:"/images/#{item[:header_image]}"}
+  .post-title
+    %a{href:item.path}
+      %h1=item[:title]
+  = yield
+  .tags
+    %span.tag-title tags
+    - if item[:tags].include? 'geek'
+      %a.tag.geek{href:'/tags/geek'} #geek
+    - if item[:tags].include? 'travel'
+      %a.tag.travel{href:'/tags/travel'} #travel
+    - if item[:tags].include? 'beer'
+      %a.tag.beer{href:'/tags/beer'} #beer
+  .body-text
+    %hr
+    %blockquote
+      Interested in reading about more of our adventure? Head on over to <a href='/posts'>our previous posts</a>.
+    %hr
+    %h2.comment-header Comments
+    <div class='fb-comments' data-href="http://travel.robertfall.com#{item.path}" data-numposts="5" data-colorscheme="light" data-width='100%'></div>

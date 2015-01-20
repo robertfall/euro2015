@@ -1,0 +1,11 @@
+.previous-posts#previous-posts
+  h2 Previous Posts
+  - articles.group_by{|a| a[:country] }.sort_by{|c| c.last.first[:posted] }.each do |country|
+    div {class= "country #{country.first.parameterize}"}
+      .left-column
+        .country-name= country.first
+      .right-column
+        - country.last.each do |article|
+          a.previous-post href=article.path
+            =article[:title]
+            span.posted= article[:posted]

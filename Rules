@@ -56,4 +56,5 @@ route '*' do
   end
 end
 
+layout 'post', :haml
 layout '*', :slim
