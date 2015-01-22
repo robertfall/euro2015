@@ -21,6 +21,10 @@ end
 compile '/assets/*' do
 end
 
+compile '/images/**' do
+
+end
+
 compile '/posts/*/' do
   filter :haml
   layout 'post'
@@ -31,8 +35,11 @@ end
 compile '*' do
   if item.binary?
     # don’t filter binary items
-  else
+  elsif item[:filename] =~ /slim/
     filter :slim
+    layout 'default'
+  else
+    filter :haml
     layout 'default'
   end
 end
