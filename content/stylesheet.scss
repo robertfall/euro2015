@@ -8,9 +8,12 @@ $max-width: em(700);
 $gray: #bebebe;
 $dark-gray: #767676;
 $geek: #7070BB;
+$geek-light: #F2F2FD;
 $travel: #A3AE8B;
 $beer: #9E775A;
+$beer-light: #FAF4EF;
 
+$belgium: red;
 $south-africa: #83B270;
 
 $breakpoint: 600px;
@@ -175,10 +178,6 @@ a.previous-posts {
   }
 }
 
-.geek { color: $geek; }
-.travel { color: $travel; }
-.beer { color: $beer; }
-
 footer {
   margin-bottom: 30px;
 }
@@ -251,6 +250,15 @@ hr {
       color: $south-africa;
     }
   }
+
+  &.belgium {
+    border-color: $belgium;
+    color: $belgium;
+
+    a {
+      color: $belgium;
+    }
+  }
 }
 
 .rotated-country-name {
@@ -277,6 +285,10 @@ hr {
 
     &.south-africa {
       color: $south-africa;
+    }
+
+    &.belgium {
+      color: $belgium;
     }
   }
 
@@ -323,5 +335,89 @@ hr {
       background: $gray;
       color: white;
     }
+  }
+}
+
+@media (max-width: $breakpoint) {
+  .collapsible-section {
+    position: relative;
+    &:before {
+      position: absolute;
+      top: 30px;
+      transform: rotate(-90deg);
+      width: 200px;
+      transform-origin: 100% 0;
+      transition: all 1s;
+      text-align: right;
+      font-size: 4em;
+      right: 50%;
+      margin-right: 48px;
+      z-index: 0;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-weight: 800;
+      opacity: 0.2;
+    }
+
+    &.beer:before {
+      content: '#beer';
+      color: $beer;
+    }
+
+    &.beer {
+      background: $beer-light;
+    }
+
+    &.geek:before {
+      content: '#geek';
+      color: $geek;
+    }
+
+    &.geek {
+      background: $geek-light;
+    }
+  }
+}
+@media (min-width: $breakpoint) {
+  .collapsible-section {
+    position: relative;
+
+    &:before {
+      content: '';
+      border-left: 3px solid;
+      position: absolute;
+      height: 100%;
+      left: -10px;
+    }
+
+    &:after {
+      position: absolute;
+      top: 0;
+      left: -255px;
+      transform: rotate(-90deg);
+      width: 200px;
+      transform-origin: 100% 0;
+      transition: all 1s;
+      text-align: right;
+      font-size: 2em;
+    }
+
+    &.beer:before {
+      border-color: $beer;
+    }
+
+    &.geek:before {
+      border-color: $geek;
+    }
+
+    &.beer:after {
+      color: $beer;
+      content: '#beer';
+    }
+
+    &.geek:after {
+      color: $geek;
+      content: '#geek';
+    }
+
   }
 }
