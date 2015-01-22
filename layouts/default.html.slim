@@ -10,7 +10,13 @@ html
     meta property="og:site_name" content="Our Eurotrip Story"
     meta property="og:image" content="http://travel.robertfall.com/images/#{item[:header_image]}"
     meta property="og:url" content="http://travel.robertfall.com#{item.path}"
+    link rel="icon" type="image/png" href="/favicon.png"
 
   body
     a.site-title href='/' OUR EUROTRIP STORY
+    ul.site-links
+      li
+        a href='/posts' class=(item.identifier =~ /posts\/*$/ ? 'active' : '') PREVIOUS POSTS
+      li
+        a href='/photos' class=(item.identifier =~ /photos/ ? 'active' : '') PHOTOS
     == yield

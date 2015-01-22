@@ -255,14 +255,73 @@ hr {
 
 .rotated-country-name {
 
-    position: absolute;
-    top: 0;
-    left: -230px;
-    transform: rotate(-90deg);
-    width: 200px;
-    transform-origin: 100% 0;
-    transition: all 1s;
-    text-align: right;
-    /* padding-right: 10px; */
+  position: absolute;
+  top: 0;
+  left: -230px;
+  transform: rotate(-90deg);
+  width: 200px;
+  transform-origin: 100% 0;
+  transition: all 1s;
+  text-align: right;
+  /* padding-right: 10px; */
 
+}
+
+.gallery {
+  @include outer-container;
+
+  .gallery-header {
+    text-align: center;
+    font-size: 2em;
+    font-weight: 200;
+
+    &.south-africa {
+      color: $south-africa;
+    }
+  }
+
+  .picture {
+    height: 165px;
+    width: 24%;
+    margin: 0.5%;
+    background-position: 50% 25%;
+    background-size: cover;
+    float: left;
+
+    @media (max-width: $breakpoint) {
+      width: 100%;
+      height: 200px;
+    }
+  }
+}
+
+.site-links {
+  text-align: center;
+  padding: 10px 0;
+  border-top: 1px solid $dark-gray;
+  border-bottom: 1px solid $dark-gray;
+  width: 410px;
+  margin: 0 auto 10px;
+
+  li {
+    display: inline-block;
+
+    &:first-child {
+      border-right: 2px solid $dark-gray;
+    }
+  }
+
+  a {
+    display: inline-block;
+    width: 200px;
+
+    &.active {
+      font-weight: 800;
+    }
+
+    &:hover {
+      background: $gray;
+      color: white;
+    }
+  }
 }

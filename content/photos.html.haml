@@ -1,0 +1,5 @@
+.gallery
+  - countries.each do |country|
+    .gallery-header.south-africa= country
+    - images_for(country.parameterize.underscore).each do |image|
+      %a.picture{style:"background-image: url(#{relative_path_to(image)})", href:relative_path_to(image), target:'_blank'}

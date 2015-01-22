@@ -22,7 +22,6 @@ compile '/assets/*' do
 end
 
 compile '/images/**' do
-
 end
 
 compile '/posts/*/' do
