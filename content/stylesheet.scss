@@ -217,12 +217,14 @@ hr {
 }
 
 .country {
+  display: -webkit-flex;
   display: flex;
+  -webkit-align-items: center;
+  align-items: center;
   margin: 10px 0;
 
   .left-column {
     width: 29px;
-    align-self: center;
   }
 
   .right-column {
@@ -234,11 +236,11 @@ hr {
     font-size: 1.5em;
     font-weight: 800;
     line-height: 25px;
+    -webkit-transform-origin: 50% 50%;
+    -webkit-transform: translateX(-85px) rotate(-90deg);
     transform-origin: 50% 50%;
-    transition: all 1s;
-    width: 200px;
-    align-self: center;
     transform: translateX(-85px) rotate(-90deg);
+    width: 200px;
     text-align: center;
   }
 
@@ -259,20 +261,6 @@ hr {
       color: $belgium;
     }
   }
-}
-
-.rotated-country-name {
-
-  position: absolute;
-  top: 0;
-  left: -230px;
-  transform: rotate(-90deg);
-  width: 200px;
-  transform-origin: 100% 0;
-  transition: all 1s;
-  text-align: right;
-  /* padding-right: 10px; */
-
 }
 
 .gallery {
@@ -344,9 +332,11 @@ hr {
     &:before {
       position: absolute;
       top: 30px;
-      transform: rotate(-90deg);
       width: 200px;
+      transform: rotate(-90deg);
       transform-origin: 100% 0;
+      -webkit-transform: rotate(-90deg);
+      -webkit-transform-origin: 100% 0;
       transition: all 1s;
       text-align: right;
       font-size: 4em;
@@ -394,9 +384,10 @@ hr {
       top: 0;
       left: -255px;
       transform: rotate(-90deg);
-      width: 200px;
       transform-origin: 100% 0;
-      transition: all 1s;
+      -webkit-transform: rotate(-90deg);
+      -webkit-transform-origin: 100% 0;
+      width: 200px;
       text-align: right;
       font-size: 2em;
     }
