@@ -5,7 +5,7 @@
       .left-column
         .country-name= country.first
       .right-column
-        - country.last.each do |article|
+        - country.last.sort_by{ |a| Date.parse(a[:posted]) }.reverse.each do |article|
           a.previous-post href=article.path
             =article[:title]
             span.posted= article[:posted]

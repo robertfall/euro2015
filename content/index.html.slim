@@ -1,2 +1,2 @@
-- articles.first.tap do |article|
+- articles.sort_by{|a| Date.parse(a[:posted]) }.last.tap do |article|
   == article.compiled_content(snapshot: :body)
