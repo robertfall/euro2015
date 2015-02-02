@@ -5,6 +5,7 @@ require 'active_support/core_ext/string/inflections'
 include Nanoc::Helpers::Blogging
 include Nanoc::Helpers::Tagging
 include Nanoc::Helpers::LinkTo
+include Nanoc::Helpers::XMLSitemap
 
 def images_for(country)
   items.select {|i| i.identifier =~ /images\/#{country}/}
