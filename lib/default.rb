@@ -13,3 +13,11 @@ end
 def countries
   articles.map { |a| a[:country] }.uniq
 end
+
+def video(path, poster_path)
+<<-eos
+  <video autoplay="autoplay" controls="controls" loop="loop" poster="#{poster_path}" preload="auto">
+      <source src="#{path}">
+    </video>
+eos
+end

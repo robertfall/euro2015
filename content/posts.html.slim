@@ -1,6 +1,6 @@
 .previous-posts#previous-posts
   h2 Previous Posts
-  - articles.group_by{|a| a[:country] }.sort_by{|c| c.last.first[:posted] }.each do |country|
+  - articles.group_by{|a| a[:country] }.sort_by{|c| Date.parse(c.last.first[:posted]) }.reverse.each do |country|
     div {class= "country #{country.first.parameterize}"}
       .left-column
         .country-name= country.first
