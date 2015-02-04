@@ -10,7 +10,8 @@
   }(document, 'script', 'facebook-jssdk'));
 
 .post
-  %img{src:"/images/#{item[:header_image]}"}
+  - if item[:header_image]
+    %img{src:"/images/#{item[:header_image]}"}
   .post-title
     %a{href:item.path}
       %h1=item[:title]
