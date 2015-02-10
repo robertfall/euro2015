@@ -1,5 +1,19 @@
-- countries.each do |country|
-  .gallery
-    .gallery-header{class: country.parameterize}= country
-    - images_for(country.parameterize.underscore).each do |image|
-      %a.picture{style:"background-image: url(#{relative_path_to(image)})", href:relative_path_to(image), target:'_blank'}
+#photos
+//thumbs_for(country.parameterize.underscore).each do |image|
+%script{src:"//fb.me/react-with-addons-0.12.2.js"}
+%script{src:"//fb.me/JSXTransformer-0.12.2.js"}
+%script{type:"text/jsx", src:'/scripts/photos.jsx'}
+:javascript
+  function start() {
+    var countries = #{thumbnail_json};
+    var photo = React.createFactory(Photos);
+    React.render(photo({countries: countries}), document.getElementById('photos'));
+  };
+  if (window.addEventListener)
+  {
+    window.addEventListener('load', start, false);
+  }
+  else if (window.attachEvent)
+  {
+    window.attachEvent('onload', start);
+  }

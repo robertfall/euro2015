@@ -295,6 +295,7 @@ hr {
     background-position: 50% 25%;
     background-size: cover;
     float: left;
+    cursor: pointer;
 
     @media (max-width: $breakpoint) {
       width: 100%;
@@ -302,6 +303,16 @@ hr {
     }
   }
 }
+
+.download-link {
+  display: block;
+  text-align: center;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 
 .site-links {
   text-align: center;
