@@ -5,3 +5,5 @@ tmp/*
 .sass-cache/*
 output/*
 crash.log
+node_modules/
+npm-debug.log
