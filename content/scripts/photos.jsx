@@ -47,8 +47,7 @@ var Gallery = React.createClass({
 
   },
   handleClick: function(country, photo) {
-    console.log('clicked')
-    var photoUrl = "/images/" + country + "/" + photo;
+    var photoUrl = '/images/' + country + '/' + photo;
     this.setState({selectedPhoto: photoUrl});
   },
 

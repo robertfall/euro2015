@@ -1,8 +1,7 @@
 #photos
 //thumbs_for(country.parameterize.underscore).each do |image|
 %script{src:"//fb.me/react-with-addons-0.12.2.js"}
-%script{src:"//fb.me/JSXTransformer-0.12.2.js"}
-%script{type:"text/jsx", src:'/scripts/photos.jsx'}
+%script{type:"text/javascript", src:'/scripts/photos.js'}
 :javascript
   function start() {
     var countries = #{thumbnail_json};

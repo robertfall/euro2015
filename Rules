@@ -28,6 +28,10 @@ compile '/sitemap/' do
   filter :erb
 end
 
+compile '/scripts/*' do
+  filter :jsx if item[:filename] =~ /jsx/
+end
+
 compile '/posts/*/' do
   filter :haml
   layout 'post'
@@ -58,6 +62,10 @@ end
 
 route '/sitemap/' do
   item.identifier.chop + '.xml'
+end
+
+route '/scripts/*' do
+    item.identifier.chop + '.js'
 end
 
 route '*' do
